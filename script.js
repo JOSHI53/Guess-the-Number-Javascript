@@ -31,16 +31,12 @@ document.querySelector('.check').addEventListener('click', function () {
         }
     }
     else if (guess != secretNumber) {
-        if (guess > secretNumber) {
-            document.querySelector('.message').textContent = "Too High!";
-        }
-        else if (guess < secretNumber) {
-            document.querySelector('.message').textContent = "Too Low!";
 
-        }
         if (score > 1) {
             score--;
             document.querySelector('.score').textContent = score;
+            document.querySelector('.message').textContent = guess > secretNumber ? "Too High!" : "Too Low!";
+
         }
 
         else {
